@@ -3,7 +3,8 @@ name: CI/CD WORKFLOW
 on:
   push:
     branches: [ restassured ]
-
+  pull_request:
+    branches: [ restassured ]
 jobs:
   build:
     runs-on: ubuntu-latest
