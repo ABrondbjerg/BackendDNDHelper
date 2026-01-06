@@ -10,3 +10,8 @@ public class Main {
     public static void main(String[] args) {
         ApplicationConfig.startServer(7070);}
 }
+
+/*
+
+Lygegyldigt udfylding af tekst for at lave pull request
+ */
