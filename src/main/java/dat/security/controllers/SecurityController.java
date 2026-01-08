@@ -210,11 +210,18 @@ public class SecurityController implements ISecurityController {
                 // Get all users from database
                 Set<User> users = securityDAO.getAllUsers();
 
-                // Convert to simple list of usernames
+                // Convert to list with username AND roles
                 var userList = users.stream()
                         .map(user -> {
-                            var userMap = new java.util.HashMap<String, String>();
+                            var userMap = new java.util.HashMap<String, Object>();
                             userMap.put("username", user.getUsername());
+
+
+                            String roles = user.getRoles().stream()
+                                    .map(role -> role.getRoleName())
+                                    .collect(Collectors.joining(","));
+                            userMap.put("roles", roles);
+
                             return userMap;
                         })
                         .collect(Collectors.toList());
