@@ -67,7 +67,7 @@ public class Populate {
             em.getTransaction().commit();
         }
 
-        System.out.println("--- Database populated successfully! ---");
+        System.out.println("--- Database populated successfully :D ! ---");
 
 
 
@@ -84,7 +84,7 @@ public class Populate {
             }
             return mapper.readValue(input, typeRef);
         } catch (IOException e) {
-            throw new RuntimeException("Error reading " + path, e);
+            throw new RuntimeException("Error Reading " + path, e);
         }
     }
 
